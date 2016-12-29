@@ -23,10 +23,10 @@ install:
   - pip install .
   - pip install -r requirements.txt
 # command to run tests
-#script: pytest
+script: pytest
 
-before_script:
-  - psql -c "CREATE DATABASE mydb;" -U postgres
+#before_script:
+ # - psql -c "CREATE DATABASE mydb;" -U postgres
 
-script:
-  - python manage.py syncdb --noinput
+#script:
+ # - python manage.py syncdb --noinput
