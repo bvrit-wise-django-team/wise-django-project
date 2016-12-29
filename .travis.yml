@@ -8,15 +8,15 @@ python:
   - "pypy3" # Pypy3 2.4.0
   - "pypy-5.3.1"
   
-services: postgresql
+#services: postgresql
 
 env:
   - DJANGO=1.4.1
   
-before_install:
-  - export DJANGO_SETTINGS_MODULE="django.settings"
-  - export PYTHONPATH=$HOME/builds/KukkadapuSushma/wise-django-project
-  - export PIP_USE_MIRRORS=true
+#before_install:
+ # - export DJANGO_SETTINGS_MODULE="django.settings"
+  #- export PYTHONPATH=$HOME/builds/KukkadapuSushma/wise-django-project
+ # - export PIP_USE_MIRRORS=true
 
 # command to install dependencies
 install:
