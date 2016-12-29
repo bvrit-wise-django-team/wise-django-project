@@ -12,4 +12,5 @@ install:
   - pip install django
   - pip install -r requirements.txt
 # command to run tests
-script: pytest
+script:
+  - sh build_forum.sh
