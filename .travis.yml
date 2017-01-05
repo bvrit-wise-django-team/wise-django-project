@@ -2,14 +2,16 @@ language: python
 python:
   - "3.5"
   - "3.5.2"
-  # PyPy versions
-  - "pypy"
-  - "pypy"  # PyPy2 2.5.0
-  - "pypy3" # Pypy3 2.4.0
-  - "pypy-5.3.1"
-# command to install dependencies
+env:
+  - DJANGO=1.10.1
+  - DJANGO=1.10
 install:
-  - pip install .
-  - pip install -r requirements.txt
-# command to run tests
-script: pytest 
+  - pip install -q Django==$DJANGO --use-mirrors
+  - pip install pep8 --use-mirrors
+  - pip install https://github.com/dcramer/pyflakes/tarball/master
+  - pip install -q -e . --use-mirrors
+before_script:
+  - "pep8 --exclude=migrations --ignore=E501,E225 src"
+  - pyflakes -x W src
+script:
+  - python setup.py test
