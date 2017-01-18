@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.5"
+  - 3.5
 # command to install dependencies
 install:
     - pip install -r requirements.txt   
@@ -9,6 +9,9 @@ services:
   
 env: # => 4
       -DJANGO=1.10 DB=mysql
+      - DJANGO_SETTINGS_MODULE="helloapp.settings"
+      
+      
 
 before_script: # => 6
       - mysql -e 'create database sampleDB;' -u root
