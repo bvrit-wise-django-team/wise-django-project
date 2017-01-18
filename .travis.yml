@@ -12,6 +12,8 @@ env: # => 4
 
 before_script: # => 6
       - mysql -e 'create database sampleDB;' -u root
+      - python manage.py syncdb --noinput
 script: # => 7
       - py.test runTests.py
+      - python manage.py test
 
