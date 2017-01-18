@@ -10,6 +10,8 @@ services:
 env: # => 4
       -DJANGO=1.10 DB=mysql
       - DJANGO_SETTINGS_MODULE="helloapp.settings"
+      - PYTHONPATH="/home/travis/build/rishikaharitha/bvrit-wise-django-team/wise-django-project"
+      - PIP_USE_MIRRORS=true
       
       
 
