@@ -10,14 +10,14 @@ services:
 env: # => 4
       -DJANGO=1.10 DB=mysql
       - DJANGO_SETTINGS_MODULE="helloapp.settings"
-      - PYTHONPATH="/home/travis/build/rishikaharitha/bvrit-wise-django-team/wise-django-project"
+      - PYTHONPATH="/home/travis/build/RishikaHaritha/bvrit-wise-django-team/wise-django-project"
       - PIP_USE_MIRRORS=true
       
       
 
 before_script: # => 6
       - mysql -e 'create database sampleDB;' -u root
-      - python manage.py syncdb --noinput
+      
 script: # => 7
       - py.test runTests.py
       - python manage.py test
