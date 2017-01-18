@@ -18,7 +18,7 @@ class LoginTestCase(TestCase):
         Student.objects.create(name="14wh1a0597", password="@123nandini")
 
     def test_login_in(self):
-        14wh1a05b2 = Student.objects.get(name="14wh1a05b2")
-        14wh1a0597 = Student.objects.get(name="14wh1a0597")
-        self.assertEqual(14wh1a05b2.password(), 'password is "123$5678"')
-        self.assertEqual(14wh1a0597.password(), ' password is"@123nandini"')
+        stu5b2 = Student.objects.get(name="14wh1a05b2")
+        stu597 = Student.objects.get(name="14wh1a0597")
+        self.assertEqual(stu5b2.password(), 'password is "123$5678"')
+        self.assertEqual(stu597.password(), ' password is"@123nandini"')
