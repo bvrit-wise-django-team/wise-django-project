@@ -7,4 +7,15 @@ install:
 # command to run tests
 script: 
     - py.test runTests.py
+    
+services:
+  - mysql
+  
+env: # => 4
+      -DJANGO=1.10 DB=mysql
+
+before_script: # => 6
+      - mysql -e 'create database django;' -u root
+script: # => 7
+      - python manage.py test
 
