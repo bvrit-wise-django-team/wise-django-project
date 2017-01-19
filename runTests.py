@@ -1,6 +1,9 @@
-def multiply(a, b):
-	return a * b;
+from django.test import TestCase
+from models import StudentSkills
 
-def test_numbers_3_4():
-    assert multiply(4, 5) == 20
-    assert multiply(4, 7) == 28
+class StudentSkillsTestCase(TestCase):
+    def setUp(self):
+        StudentSkills.objects.create(stu_rollno="1", skill="java")
+        StudentSkills.objects.create(stu_rollno="2", skill="django")
+
+   
