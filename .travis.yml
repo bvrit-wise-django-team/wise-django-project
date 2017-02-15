@@ -3,7 +3,8 @@ python:
   - "3.5"
 # command to install dependencies
 install:
-    - pip install -r requirements.txt   
+    - pip install -r requirements.txt
+    - pip install --upgrade pytest
 services:
   - mysql
   
@@ -13,6 +14,7 @@ env: # => 4
 before_script: # => 6
       - mysql -e 'create database django;' -u root
 script: # => 7
+      - pytest
       - py.test runTests.py
 
 
