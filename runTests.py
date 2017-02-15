@@ -17,4 +17,4 @@ class StudentSkillsTestCase(TestCase):
         student1 = Student.objects.get(stu_rollno="1")
         student2 = Student.objects.get(stu_rollno="2")
         self.assertEqual(student1.skill(), 'skill is java"')
-        self.assertEqual(student1.skill(), 'skill is django"')
+        self.assertEqual(student2.skill(), 'skill is django"')
