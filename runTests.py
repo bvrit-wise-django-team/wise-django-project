@@ -1,9 +1,9 @@
-#def multiply(a, b):
-#	return a * b;
+def multiply(a, b):
+	return a * b;
 
-#def test_numbers_3_4():
-#   assert multiply(4, 5) == 20
-#    assert multiply(4, 7) == 28
+def test_numbers_3_4():
+    assert multiply(4, 5) == 20
+    assert multiply(4, 7) == 28
 	
 from django.test import TestCase
 from remarks.models import Remarks
