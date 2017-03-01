@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Sample</title>
+</head>
+<body>
+    <input type = 'text' name = 'name' id = 'name'><br>
+    <button onclick = "display()">Enter</button><br>
+    <input type = 'text' id = 'display' >
+    <form action="http://127.0.0.1:8000/SampleApp/get_name/" method="post">
+ {% csrf_token %}
+
+<label for="first_name">first name: </label>
+    <input id="first_name" type="text" name="first_name" value="">
+    <label for="last_name">last name: </label>
+    <input id="last_name" type="text" name="last_name" value="">
+
+    <input type="submit" value="OK">
+   </form>
+	{% for name in data %}
+		<h1> {{ name.first_name }} </h1>
+		<h1>{{ name.last_name }}</h1>
+	{% endfor %}
+    <script>
+      function display(){
+           document.getElementById("display").value ="Welcome " + document.getElementById("name").value;
+        }
+     </script>
+
+</body>
+</html>
